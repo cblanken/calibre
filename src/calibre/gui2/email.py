@@ -200,7 +200,7 @@ class SelectRecipients(QDialog):  # {{{
         QDialog.__init__(self, parent)
         self._layout = l = QGridLayout(self)
         self.setLayout(l)
-        self.setWindowIcon(QIcon(I('mail.png')))
+        self.setWindowIcon(QIcon.ic('mail.png'))
         self.setWindowTitle(_('Select recipients'))
         self.recipients = r = QListWidget(self)
         l.addWidget(r, 0, 0, 1, -1)
@@ -227,7 +227,7 @@ class SelectRecipients(QDialog):  # {{{
             self.labels[i].setBuddy(le)
             l.addWidget(le, row, (2*c) + 1)
         self.formats.setText(prefs['output_format'].upper())
-        self.add_button = b = QPushButton(QIcon(I('plus.png')), _('&Add recipient'), self)
+        self.add_button = b = QPushButton(QIcon.ic('plus.png'), _('&Add recipient'), self)
         b.clicked.connect(self.add_recipient)
         l.addWidget(b, l.rowCount(), 0, 1, -1)
 
